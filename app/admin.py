@@ -13,6 +13,7 @@ from .models.review import Review
 
 # ModelViewデフォルトの新規作成、編集を削除
 # Viewへのアクセス制御
+
 class SecureModelView(ModelView):
     can_create = False  # 新規作成を無効化
     can_edit = False    # 編集を無効化

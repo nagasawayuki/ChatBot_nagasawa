@@ -9,7 +9,9 @@ from .models.message import Message
 from .models.review import Review
 from .models.user import User
 from werkzeug.security import check_password_hash
+
 # mainブループリントを登録
+print("test")
 main = Blueprint('main', __name__)
 
 @main.route('/')
