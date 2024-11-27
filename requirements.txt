@@ -1,0 +1,39 @@
+# Core Flask and related packages
+Flask==3.0.3
+Flask-SQLAlchemy==3.1.1
+Flask-WTF==1.2.2
+Flask-Admin==1.6.1
+Flask-Migrate==4.0.7
+Flask-Limiter==3.8.0
+Flask-Login==0.6.3
+email_validator==2.2.0
+
+# Core dependencies
+blinker==1.8.2
+click==8.1.7
+dataclasses==0.6
+itsdangerous==2.2.0
+Jinja2==3.1.4
+MarkupSafe==2.1.5
+Werkzeug==3.0.4
+
+# Database and ORM
+SQLAlchemy==2.0.32
+SQLAlchemy-Utils==0.41.2
+psycopg2-binary==2.9.9
+
+# Google API and authentication
+google-generativeai==0.8.0
+google-auth==2.34.0
+google-auth-oauthlib==1.2.1
+googleapis-common-protos==1.65.0
+protobuf==4.25.4
+
+# Utility libraries
+requests==2.32.3
+python-dotenv==1.0.1
+tenacity==9.0.0
+
+# Additional useful packages
+typing_extensions==4.12.2
+rich==13.9.4

@@ -1,0 +1,17 @@
+# messenger token
+PAGE_ACCESS_TOKEN=""
+
+# gemini-api
+API_KEY=""
+
+# Autholization webhook
+META_TOKEN=""
+
+# Admin Account 
+ADMIN_USERNAME="user_name"
+ADMIN_PASSWORD="passowrd"
+
+# setting app_config
+SQLALCHEMY_DATABASE_URI = 'postgresql://username:host/DBname'
+SQLALCHEMY_TRACK_MODIFICATIONS = "False"
+SECRET_KEY=""

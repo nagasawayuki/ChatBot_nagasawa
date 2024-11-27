@@ -1,0 +1,39 @@
+# services:
+#   postgres:
+#     image: postgres:15-alpine
+#     ports:
+#       - 5432:5432
+#     environment:
+#       - POSTGRES_PASSWORD=root
+#       - POSTGRES_DB=flask
+version: '3'
+services:
+  # PostgreSQLサービス
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=flask
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # データを永続化
+
+  # Flaskアプリケーションサービス
+  web:
+    build: .
+    ports:
+      - "5001:5001"  # ポートを5001に変更
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_ENV=development
+      - API_KEY=${API_KEY}  # 環境変数を渡す
+      - PAGE_ACCESS_TOKEN=${PAGE_ACCESS_TOKEN}
+      - DATABASE_URL=postgresql://postgres:root@postgres:5432/flask  # DB接続URL
+    depends_on:
+      - postgres  # PostgreSQLが先に起動するように依存関係を指定
+
+volumes:
+  postgres_data:
+
