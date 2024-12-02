@@ -65,6 +65,6 @@
 
 ## システム構造
 
-<img src="https://github.com/user-attachments/assets/a6f5ba3c-72e6-412b-a016-597b456b9a01" width="50%" />
+<img src="https://github.com/user-attachments/assets/a6f5ba3c-72e6-412b-a016-597b456b9a01](https://github.com/user-attachments/assets/d447b31f-bf96-4fe0-a7c6-40b23b968c77" width="50%" />
 
 
