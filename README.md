@@ -60,11 +60,11 @@
   > ngrok http (Same Port-number as this app)
 
 ## 実装動画
+
 <img src="https://github.com/user-attachments/assets/a6f5ba3c-72e6-412b-a016-597b456b9a01" width="50%" />
 
 
 ## システム構造
 
-<img src="https://github.com/user-attachments/assets/a6f5ba3c-72e6-412b-a016-597b456b9a01" width="50%" />
 <img width="583" alt="スクリーンショット 2024-12-02 13 19 27" src="https://github.com/user-attachments/assets/d447b31f-bf96-4fe0-a7c6-40b23b968c77">
 
