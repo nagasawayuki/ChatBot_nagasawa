@@ -61,6 +61,7 @@
 
 ## 実装動画
 
+<img src="https://github.com/user-attachments/assets/2fc2db85-1ee4-4b1b-8e6a-ac09b3b54a39" width="50%" />
 <img src="https://github.com/user-attachments/assets/a6f5ba3c-72e6-412b-a016-597b456b9a01" width="50%" />
 
 
