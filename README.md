@@ -61,7 +61,7 @@
 
 ## 実装動画
 
-<img src="https://github.com/user-attachments/assets/1614d995-7115-4e21-b2df-b42018703ba4" width="50%" />
+<img src="https://github.com/user-attachments/assets/2fc2db85-1ee4-4b1b-8e6a-ac09b3b54a39" width="50%" />
 
 ## システム構造
 
