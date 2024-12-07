@@ -4,7 +4,10 @@ class LongTextException(Exception):
 
 class NoMeaningException(Exception):
     pass
-   
+
+class FormatError(Exception):
+    pass
+
 class GeminiException(Exception):
     pass
 

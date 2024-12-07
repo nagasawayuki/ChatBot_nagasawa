@@ -20,7 +20,7 @@ Werkzeug==3.0.4
 # Database and ORM
 SQLAlchemy==2.0.32
 SQLAlchemy-Utils==0.41.2
-psycopg2-binary==2.9.9
+# psycopg2-binary==2.9.9
 
 # Google API and authentication
 google-generativeai==0.8.0
