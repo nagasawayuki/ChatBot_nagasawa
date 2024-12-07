@@ -139,7 +139,7 @@ def handle_webhook():
     
     except FormatError as e:
         send_message(sender_id, "This chat accepts text only.")
-        current_app.logger.error(f"Format Error")
+        current_app.logger.error(f"Format Error: not text request")
 
     except MessengerAPIError as e:
         current_app.logger.error(f"Mesenger API Error:{e}")
