@@ -60,6 +60,7 @@ class MessageReviewView(SecureModelView):
             )
             # SQLAlchemy は自動的に外部キーのリレーション（ForeignKey）に基づいて結合条件を決定
             .outerjoin(Review, Message.message_id == Review.message_id)
+            .order_by(Message.timestamp.desc())  # 時間の降順でソート
         )
 
     # @action デコレーターは、ModelView クラスで用意されているメソッド
