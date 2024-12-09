@@ -1,21 +1,22 @@
 import os
-import google.generativeai as genai
-from dotenv import load_dotenv
 import time
 import json
+from dotenv import load_dotenv
+import google.generativeai as genai
+
 
 # .envファイルを読み込む
 load_dotenv()
 current_dir = os.path.dirname(os.path.abspath(__file__))
-json_file_path = os.path.join(current_dir,"../gem_tunedData.json")
+json_file_path = os.path.join(current_dir, "../gem_tunedData.json")
 API_KEY = os.getenv('API_KEY')
 genai.configure(api_key=API_KEY)
 
 base_model = "models/gemini-1.5-flash-001-tuning"
 
-with open(json_file_path,"r") as f:
+with open(json_file_path, "r") as f:
     training_data = json.load(f)
-print("Please check training_file: ",training_data[:3])
+print("Please check training_file: ", training_data[:3])
 
 operation = genai.create_tuned_model(
     # You can use a tuned model here too. Set `source_model="tunedModels/..."`
@@ -32,6 +33,3 @@ for status in operation.wait_bar():
 
 result = operation.result()
 print(result)
-
-
-

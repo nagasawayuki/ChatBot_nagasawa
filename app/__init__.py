@@ -2,6 +2,7 @@ import os
 from flask import Flask
 from flask_login import LoginManager
 from .db import db
+from .db_operation import *
 from .models.message import *
 from .models.review import *
 # github push test
@@ -14,6 +15,7 @@ from werkzeug.security import generate_password_hash  # パスワードハッシ
 
 load_dotenv()
 
+
 def create_admin_user():
     admin_username = os.getenv("ADMIN_USERNAME")
     admin_password = os.getenv("ADMIN_PASSWORD")
@@ -21,16 +23,17 @@ def create_admin_user():
     if not admin_username or not admin_password:
         print("管理者アカウントが登録されていません。.evnファイルを確認してください")
         return
-    if not User.query.filter_by(username=admin_username).first():
+    if not user_get(admin_username):
         # アプリ作成時、既存のアカウントを全て削除する
-        db.session.query(User).delete()
-        db.session.commit()
-
+        # db.session.query(User).delete()
+        # db.session.commit()
+        user_all_delete()
         # Admin Userを作成
         admin_user = User(username=admin_username,
                           password=generate_password_hash(admin_password))
-        db.session.add(admin_user)
-        db.session.commit()
+        # db.session.add(admin_user)
+        # db.session.commit()
+        user_upload(admin_user)
         print(f"管理者アカウント '{admin_username}' が作成されました。")
 
 
@@ -48,7 +51,8 @@ def create_app():
         "SQLALCHEMY_TRACK_MODIFICATIONS") == 'True'
     app.config['SECRET_KEY'] = os.getenv(
         "SECRET_KEY")  # セッションやクッキーの安全性を保つための秘密鍵
-    app.config['META_TOKEN'] = os.getenv("META_TOKEN") #messenger webhook認証トークン
+    app.config['META_TOKEN'] = os.getenv(
+        "META_TOKEN")  # messenger webhook認証トークン
 
     with app.app_context():
         db.init_app(app)

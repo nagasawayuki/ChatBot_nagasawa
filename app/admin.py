@@ -1,20 +1,18 @@
-from flask import redirect, url_for, Response
 from io import StringIO
 import csv
+from flask import redirect, Response
 from flask_admin import Admin, AdminIndexView, expose, BaseView
 from flask_admin.actions import action
 from flask_admin.contrib.sqla import ModelView
 from flask_login import current_user, logout_user
-from sqlalchemy.orm import joinedload
 from .db import db
 from .models.user import User  # 認証用のユーザーモデル
 from .models.message import Message
 from .models.review import Review
 
+
 # ModelViewデフォルトの新規作成、編集を削除
 # Viewへのアクセス制御
-
-
 class SecureModelView(ModelView):
     can_create = False  # 新規作成を無効化
     can_edit = False    # 編集を無効化
@@ -27,8 +25,8 @@ class SecureModelView(ModelView):
         # return self.render('admin_panel.html') # 認証されていない場合はログインページにリダイレクト
         return redirect('/login')
 
-# カスタムAdminIndexView
 
+# カスタムAdminIndexView
 class MyAdminIndexView(AdminIndexView):
     @expose('/')
     def index(self):
@@ -98,6 +96,7 @@ class MessageReviewView(SecureModelView):
         "ai_response": "AI Response",
         "review": "Review",
     }
+
 
 # 管理画面の初期化
 def init_admin(app):
